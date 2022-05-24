@@ -1,6 +1,6 @@
-package br.com.bixb.crudapi.crudapi.repository;
+package br.com.bixb.crudapi.repository;
 
-import br.com.bixb.crudapi.crudapi.repository.entity.Product;
+import br.com.bixb.crudapi.repository.entity.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

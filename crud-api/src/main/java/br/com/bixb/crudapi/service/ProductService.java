@@ -1,9 +1,9 @@
-package br.com.bixb.crudapi.crudapi.service;
+package br.com.bixb.crudapi.service;
 
-import br.com.bixb.crudapi.crudapi.controller.ProductRequest;
-import br.com.bixb.crudapi.crudapi.controller.ProductResponse;
-import br.com.bixb.crudapi.crudapi.repository.ProductRepository;
-import br.com.bixb.crudapi.crudapi.repository.entity.Product;
+import br.com.bixb.crudapi.controller.ProductRequest;
+import br.com.bixb.crudapi.controller.ProductResponse;
+import br.com.bixb.crudapi.repository.ProductRepository;
+import br.com.bixb.crudapi.repository.entity.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

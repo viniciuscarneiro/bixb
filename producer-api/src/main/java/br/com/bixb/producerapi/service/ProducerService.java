@@ -1,4 +1,4 @@
-package br.com.bixb.producerapi.producerapi.service;
+package br.com.bixb.producerapi.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ public record ProducerService(KafkaTemplate<String, String> kafkaTemplate) {
 
     public void sendMessage(String message) {
         ListenableFuture<SendResult<String, String>> future =
-                kafkaTemplate.send("bixb_test", message);
+                kafkaTemplate.send("bixb_topic", message);
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
 
             @Override

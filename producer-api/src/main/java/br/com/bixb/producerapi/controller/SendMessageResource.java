@@ -1,6 +1,6 @@
-package br.com.bixb.producerapi.producerapi.controller;
+package br.com.bixb.producerapi.controller;
 
-import br.com.bixb.producerapi.producerapi.service.ProducerService;
+import br.com.bixb.producerapi.service.ProducerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

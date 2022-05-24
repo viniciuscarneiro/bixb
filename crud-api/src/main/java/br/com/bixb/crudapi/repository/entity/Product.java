@@ -1,4 +1,4 @@
-package br.com.bixb.crudapi.crudapi.repository.entity;
+package br.com.bixb.crudapi.repository.entity;
 
 import lombok.Data;
 

@@ -38,14 +38,11 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      #KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
-      #KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      #KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_LISTENERS: LISTENER_PUBLIC://kafka:29092,LISTENER_INTERNAL://localhost:9092
-      KAFKA_ADVERTISED_LISTENERS: LISTENER_PUBLIC://kafka:29092,LISTENER_INTERNAL://localhost:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_PUBLIC:PLAINTEXT,LISTENER_INTERNAL:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_PUBLIC
+      KAFKA_CREATE_TOPICS: "bixb_topic:1:1"
 
   kafdrop:
     image: obsidiandynamics/kafdrop:latest
@@ -59,29 +56,37 @@ services:
       KAFKA_BROKERCONNECT: kafka:29092
 
   crud-api:
-    image: 'crud-api:latest'
+    image: 'brito/crud-api:latest'
     build:
       context: ./crud-api
-    tty: true      
+      args:
+        - JAR_FILE=build/libs/\*.jar      
     container_name: crud-api
     depends_on:
       - kafka
       - database
+    tty: true      
     stdin_open: true
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
     networks:
       - net
     ports: 
       - "8080:8080"
 
   producer-api:
-    image: 'producer-api:latest'
+    image: 'brito/producer-api:latest'
     build:
       context: ./producer-api
-    tty: true      
+      args:
+        - JAR_FILE=build/libs/\*.jar
     container_name: producer-api
-    stdin_open: true
     depends_on:
-      - crud-api
+      - kafka
+    tty: true
+    stdin_open: true
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
     networks:
       - net
     ports: 

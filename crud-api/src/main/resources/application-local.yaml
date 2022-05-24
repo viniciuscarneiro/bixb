@@ -16,9 +16,3 @@ server:
   servlet:
     context-path: /crud
   port: 8080
-
-kafka:
-  bootstrap:
-    address: localhost:9092
-  group:
-    id: 1

@@ -1,13 +1,13 @@
-package br.com.bixb.producerapi.producerapi;
+package br.com.bixb.producerapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProducerApiApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProducerApiApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

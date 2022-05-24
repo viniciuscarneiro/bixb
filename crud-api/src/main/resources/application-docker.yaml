@@ -12,13 +12,11 @@ spring:
       ddl-auto: none
     show-sql: true
     open-in-view: false
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: 1
 server:
   servlet:
     context-path: /crud
   port: 8080
-
-kafka:
-  bootstrap:
-    address: kafka:9092
-  group:
-    id: 1

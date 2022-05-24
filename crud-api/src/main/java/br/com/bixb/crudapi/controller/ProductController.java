@@ -1,6 +1,6 @@
-package br.com.bixb.crudapi.crudapi.controller;
+package br.com.bixb.crudapi.controller;
 
-import br.com.bixb.crudapi.crudapi.service.ProductService;
+import br.com.bixb.crudapi.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
