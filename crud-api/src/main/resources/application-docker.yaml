@@ -16,7 +16,3 @@ spring:
     bootstrap-servers: kafka:9092
     consumer:
       group-id: 1
-server:
-  servlet:
-    context-path: /crud
-  port: 8080
