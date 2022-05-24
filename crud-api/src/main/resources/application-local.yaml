@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bixb
+    username: bixb
+    password: bixb
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+server:
+  servlet:
+    context-path: /crud
+  port: 8080
+
+kafka:
+  bootstrap:
+    address: localhost:9092
+  group:
+    id: 1
