@@ -10,7 +10,14 @@
 
 ## Endpoints
 ### Enviando mensagem para o kafka
-`localhost:8081/message`
+```
+curl -X POST \
+http://localhost:8081/message \
+-H 'Accept: application/json' \
+-H 'Content-Type: application/json' \
+-d '{"name": "Tenis Nike Vapor max"}'
+
+```
 
 ### Validando que o consumidor recebeu a mensagem e salvou no banco de dados
 `localhost:8080/crud/products`
