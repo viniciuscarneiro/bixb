@@ -14,7 +14,7 @@ public record ProducerService(KafkaTemplate<String, String> kafkaTemplate) {
     public void sendMessage(String message) {
         ListenableFuture<SendResult<String, String>> future =
                 kafkaTemplate.send("bixb_topic", message);
-        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+        future.addCallback(new ListenableFutureCallback<>() {
 
             @Override
             public void onSuccess(SendResult<String, String> result) {

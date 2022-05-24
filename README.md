@@ -2,6 +2,8 @@
 
 ## Arquitetura
 
+![arquitetura](arquitetura.jpg)
+
 ## Executando
 
 `docker-compose up --build`
