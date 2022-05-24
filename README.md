@@ -20,4 +20,4 @@ http://localhost:8081/message \
 ```
 
 ### Validando que o consumidor recebeu a mensagem e salvou no banco de dados
-`localhost:8080/crud/products`
+`curl localhost:8080/crud/products`
