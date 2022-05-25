@@ -1,5 +1,11 @@
 # bixb
 
+## Pré Requisitos
+
+- Java 17
+- Docker
+- Docker Compose
+
 ## Arquitetura
 
 ![arquitetura](arquitetura.jpg)
