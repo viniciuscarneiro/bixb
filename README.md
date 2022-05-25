@@ -1,4 +1,7 @@
-# bixb
+# Dockerized Spring Boot Apps with Kafka
+
+#### In this example you are going to see how to run Spring Boot Apps consuming and publishing messages in Kafka.
+Everything is dockerized and running in a docker-compose.yaml
 
 ## Pré Requisitos
 
